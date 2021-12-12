@@ -15,7 +15,7 @@ public class BaseClass {
 	
 
 	@BeforeTest
-	public void loadConfig() throws IOException {
+	public static void loadConfig() throws IOException {
 		try {
 			prop = new Properties();
 			FileInputStream ip= new FileInputStream(
@@ -31,6 +31,8 @@ public class BaseClass {
 	public static WebDriver lunchApp() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
 		String url=prop.getProperty("url");
 		driver.get(url);
 		return driver;
