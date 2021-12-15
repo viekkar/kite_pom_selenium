@@ -8,8 +8,10 @@ import com.kite.pageobjects.LoginPage;
 import com.kite.pageobjects.PinPage;
 
 public class LoginPageTest extends BaseClass {
+	
 	LoginPage loginPage;
 	PinPage pinPage;
+	
 	public LoginPageTest() {
 		super();
 	}
@@ -31,7 +33,7 @@ public class LoginPageTest extends BaseClass {
 		Assert.assertTrue(flag);
 	}
 	
-	@Test(priority=3)
+	@Test(priority=1)
 	public void loginTest() {
 		pinPage=loginPage.Login(prop.getProperty("userid"),prop.getProperty("password"));
 		

@@ -3,14 +3,14 @@
 <suite name="Failed suite [Command line suite]" verbose="0">
   <test thread-count="5" name="Command line test(failed)" verbose="0">
     <classes>
-      <class name="com.kite.testcases.LogPinPageTest">
+      <class name="com.kite.testcases.PinPageTest">
         <methods>
+          <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="enterPin"/>
           <include name="loadConfig"/>
+          <include name="pinEnterTest"/>
         </methods>
-      </class> <!-- com.kite.testcases.LogPinPageTest -->
+      </class> <!-- com.kite.testcases.PinPageTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

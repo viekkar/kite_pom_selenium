@@ -3,7 +3,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.kite.base.BaseClass;
+
 public class LoginPage extends BaseClass {
+	
+	LoginPage loginPage;
+	PinPage pinPage;
 	
 	//page objects using pagefactory method
 	@FindBy(xpath="//*[@id='userid']")
@@ -17,6 +21,8 @@ public class LoginPage extends BaseClass {
 	
 	@FindBy(xpath="//*[@id=\'outer-base\']")
 	WebElement logo;
+	
+	
 	//initializing of page objects
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
@@ -30,14 +36,13 @@ public class LoginPage extends BaseClass {
 		return logo.isDisplayed();
 	}
 	public PinPage Login(String userid, String password) {
+
 		clintid.sendKeys(userid);
 		pwd.sendKeys(password);
 		btn.click();
 		
 		return new PinPage();
 	}
-
-
 
 }
 
