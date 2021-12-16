@@ -5,13 +5,15 @@ import org.openqa.selenium.support.PageFactory;
 import com.kite.base.BaseClass;
 
 
-public class PinPage extends BaseClass {
+public class PinPage extends BaseClass 
+{
+	
 	
 
-	@FindBy(id="pin")
+	@FindBy(xpath="//input[@id='pin']")
 	WebElement pincode;
 	
-	@FindBy(xpath="/html/body/div[1]/div/div/div[1]/div/div/div/form/div[3]/button")
+	@FindBy(xpath="//button[@type='submit']")
 	WebElement pinbutton;
 	
 	
@@ -21,13 +23,18 @@ public class PinPage extends BaseClass {
 	
 	//actions
 	
-	public Dashboard pinEnter(String pin) {
-		System.out.println(driver.getTitle());
+	public void pinEnter(String pin) {
+		try{
+			System.out.println(driver.getTitle());
 		System.out.println(pin);
+		//Thread.sleep(5000);
 		pincode.sendKeys(pin);
 		pinbutton.click();
 		System.out.println(driver.getTitle());
-		return new Dashboard();
+		//return new Dashboard();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}  
 
 }
